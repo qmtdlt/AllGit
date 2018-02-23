@@ -1,0 +1,21 @@
+﻿@using StartMVC.Models
+@using System.Collections.Generic
+@using 
+ 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<table border="1">
+    @{
+        foreach (var item in this.Model.userList)
+        {
+            <tr>
+                <td>
+                    @item.F_RealName
+                </td>
+            </tr>
+        }
+    }
+</table>
