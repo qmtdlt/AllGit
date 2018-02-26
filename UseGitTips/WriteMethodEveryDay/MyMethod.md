@@ -35,5 +35,20 @@ private bool ModuleCanShow(ModuleEntity module)
 ### 2018-02-26
 
 > 角色修改方案
-zzzzzz
 
+```sql
+select * from Sys_Role
+select * from Sys_RoleAuthorize
+
+--Sys_RoleAuthorize.F_ObjectId 角色id
+select * from Sys_Role where F_Id = '3f97c8f1-5030-4c9f-a290-eef7dc8f94af'
+
+--Sys_RoleAuthorize.F_ItemId 菜单、按钮、字段等对象在数据库的id
+--F_ItemType 1菜单id2；按钮id；3字段id
+select * from Sys_Module where F_Id = '462027E0-0848-41DD-BCC3-025DCAE65555'
+```
+
+<p style="color:red;font-size:24px">问题</p>
+<input type="button" value="确认">
+
+> 多选角色后生成组合角色，原子角色修改，组合角色无法相应更改
