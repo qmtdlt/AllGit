@@ -174,6 +174,7 @@ for (; i< value.toString().length; i++)
         count++;
     }
 }
+//这里val(),括号内为数组时，显示多个被选中
 $("#F_RoleId").val(value2).trigger("change");
 ```
 
