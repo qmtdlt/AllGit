@@ -89,4 +89,61 @@ select * from Sys_User
     {
         Console.WriteLine(item);
     }
+    //当list内容为object
+    //去重复失败
+    public class mycls
+    {
+        public mycls(int iid)
+        {
+            id = iid;
+        }
+        public int id { get; set; }
+    }
+    static void Main(string[] args)
+    {
+        List<mycls> a = new List<mycls>();
+        a.Add(new mycls(1));
+        a.Add(new mycls(2));
+        a.Add(new mycls(3));
+        List<mycls> b = new List<mycls>();
+        b.Add(new mycls(3));
+        b.Add(new mycls(4));
+        b.Add(new mycls(5));
+        a.AddRange(b);
+        HashSet<mycls> d = new HashSet<mycls>(a);
+        System.Console.WriteLine(b[0].GetHashCode());
+        System.Console.WriteLine(a[2].GetHashCode());
+        foreach (var item in d)
+        {
+            Console.WriteLine(item.id);
+        }
+    }
+```
+
+### 2018-02-27
+
+> 非正常角色导致角色认证错误
+
+### 修改了3个函数内容如下：
+
+```C#
+//ClientsDataController
+//添加多个角色的情况
+private object GetMenuButtonList();
+//添加多个角色的情况
+private object GetMenuList();
+
+//RoleAuthorizeApp
+//添加多个角色的情况
+public bool ActionValidate(string roleId, string moduleId, string action)
+```
+
+```js
+//value值大致为："["3558c1d1-5489-4c09-960d-9d97767a995e","1c5b8148-7f52-417c-a37b-e87996e7e603",""]"
+$id.val(value).trigger("change");
+```
+
+```js
+//浪费时间的点忘记[],导致select2总是只有第一个被选中
+$("#F_RoleId").val(['1c5b8148-7f52-417c-a37b-e87996e7e603', '3558c1d1-5489-4c09-960d-9d97767a995e']).trigger('change');
 ```
