@@ -147,3 +147,38 @@ $id.val(value).trigger("change");
 //浪费时间的点忘记[],导致select2总是只有第一个被选中
 $("#F_RoleId").val(['1c5b8148-7f52-417c-a37b-e87996e7e603', '3558c1d1-5489-4c09-960d-9d97767a995e']).trigger('change');
 ```
+
+```js
+//为select2多选框赋值
+var value = $.trim(data["F_RoleId"]).replace(/&nbsp;/g, '');
+//alert(value);
+//value = value.toString().substring(1, value.length - 1);
+var i = 0
+var value2 = [];
+var count = 0;
+for (; i< value.toString().length; i++)
+{
+    var strtmp = "";
+    if(value[i] == '"')
+    {
+        i++;
+        while(value[i] != '"')
+        {
+            strtmp += value[i];
+            i++;
+        }
+    }
+    if(strtmp.length > 0)
+    {
+        value2[count] = strtmp;
+        count++;
+    }
+}
+$("#F_RoleId").val(value2).trigger("change");
+```
+
+### 发现bug
+
+角色权限修改失败；
+原因：界面上勾选错误，操作问题
+
