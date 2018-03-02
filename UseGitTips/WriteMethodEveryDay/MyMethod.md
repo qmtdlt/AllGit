@@ -63,8 +63,8 @@ select * from Sys_User
 
 > 3. <p style="color:red;">另一中方法，原子角色修改后，找到使用过该原子角色的组合角色，一并修改，这要求组合角色能够分析出包含了哪些原子角色<span style="color:blue;">暂时排除</span></p>
 - [x] 完成角色多选，保存多个角色id，以逗号隔开
-- [ ] 修改ClientsDataController.cs中GetMenuButtonList()函数
-- [ ] 查看角色时，对应用户显示有多个角色
+- [x] 修改ClientsDataController.cs中GetMenuButtonList()函数
+- [x] 查看角色时，对应用户显示有多个角色
 
 ### TodayMethod
 ```C#
@@ -184,5 +184,17 @@ $("#F_RoleId").val(value2).trigger("change");
 原因：界面上勾选错误，操作问题
 
 - [ ] 多角色功能待测试
+
+### 2018 02 28
+> 2月最后一天
+
+- [ ] 发行采购授权区域约束
+- [ ] review 多角色代码
+- [ ] 测试多角色功能
+- [ ] 配置角色时，功能权限去掉勾选，下一步的字段权限也去掉对应勾选项，否则去除勾选失败
+> - [ ] 查看系统是怎样通过权限，控制按钮隐藏的
+
+bug
+> 系统管理，新增菜单父级显示不全 
 
 
