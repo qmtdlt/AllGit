@@ -197,4 +197,20 @@ $("#F_RoleId").val(value2).trigger("change");
 bug
 > 系统管理，新增菜单父级显示不全 
 
+### 2018 03 04
+
+> 付款申请单链接合同，看不到合同相关信息
+
+- [ ] 查看合同主页如何解决
+
+> 问题描述：
+
+```js
+src += "?ContractSerial=" + '@ViewBag.ContractSerial1' +"&view=1" + "&ContractNumber=" + "@ViewBag.ContractNumber1";
+```
+> 组织url时使用viewbag变量为字符串是未加单引号，导致变量值改变，加单引号后成功
+
+
+
+
 
