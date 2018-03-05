@@ -210,6 +210,11 @@ src += "?ContractSerial=" + '@ViewBag.ContractSerial1' +"&view=1" + "&ContractNu
 ```
 > 组织url时使用viewbag变量为字符串是未加单引号，导致变量值改变，加单引号后成功
 
+### 2018 03 05
+# 中公教育
+> NC创建管理员
+
+> root 集团管理员 动态建模平台 权限管理 用户
 
 
 
