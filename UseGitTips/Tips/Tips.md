@@ -216,6 +216,12 @@ src += "?ContractSerial=" + '@ViewBag.ContractSerial1' +"&view=1" + "&ContractNu
 
 > root 集团管理员 动态建模平台 权限管理 用户
 
+### 2018 03 06
+
+- [ ] findout how authroize="yes" works
+
+
+
 
 
 
