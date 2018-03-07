@@ -220,6 +220,7 @@ src += "?ContractSerial=" + '@ViewBag.ContractSerial1' +"&view=1" + "&ContractNu
 
 - [ ] findout how authroize="yes" works
 
+面向对象：物件导向（台）
 
 
 
