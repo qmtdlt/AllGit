@@ -220,9 +220,75 @@ src += "?ContractSerial=" + '@ViewBag.ContractSerial1' +"&view=1" + "&ContractNu
 
 - [ ] findout how authroize="yes" works
 
-面向对象：物件导向（台）
+### 2018 03 07
 
+- [ ] findout how ahthorize="yes" works
+> 与之相关的js逻辑代码所在文件名framework-ui.js,代码如下
 
+```js
+$.fn.authorizeButton = function () {
+    var moduleId = top.$(".NFine_iframe:visible").attr("id").substr(6);
+    var dataJson = top.clients.authorizeButton[moduleId];
+    var $element = $(this);
+    $element.find('a[authorize=yes]').attr('authorize', 'no');
+    if (dataJson != undefined) {
+        $.each(dataJson, function (i) {
+            $element.find("#" + dataJson[i].F_EnCode).attr('authorize', 'yes');
+        });
+    }
+    $element.find("[authorize=no]").parents('li').prev('.split').remove();
+    $element.find("[authorize=no]").parents('li').remove();
+    $element.find('[authorize=no]').remove();
+}
+```
+
+- [ ] authorizeButton函数怎样被触发？
+> 对应函数的html代码
+```html
+<script>$('.toolbar').authorizeButton()</script>
+```
+
+> 第一次成功控制按钮
+
+```html
+@{
+    //Layout = "~/Views/Shared/_Index.cshtml";
+}
+<link href="~/Content/css/framework-font.css" rel="stylesheet" />
+<link href="~/Content/css/framework-theme.css" rel="stylesheet" />
+<script src="~/Content/js/jquery/jquery-2.1.1.min.js"></script>
+<script src="~/Content/js/bootstrap/bootstrap.js"></script>
+<link href="~/Content/js/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Content/js/jqgrid/jqgrid.min.js"></script>
+<link href="~/Content/js/jqgrid/jqgrid.css" rel="stylesheet" />
+<script src="~/Content/js/jqgrid/grid.locale-cn.js"></script>
+<link href="~/Content/css/framework-ui.css" rel="stylesheet" />
+<script src="~/Content/js/framework-ui.js"></script>
+
+<div class="toolbar">
+    <div class="btn-group">
+        <a authorize="yes" class="btn btn-primary dropdown-text" id="btnSearch" style="font-size:16px;"><i class="icon icon-search"></i> 查询</a>
+        <a name="btnAddAsset" authorize="yes" class="btn btn-primary dropdown-text" id="btnAddAsset" onclick="btnAddAsset()" style="font-size:16px;"><i class="icon icon-ok"></i> 新增</a>
+        <a name="btnLoadAsset" authorize="yes" class="btn btn-primary dropdown-text" id="btnLoadAsset" onclick="btnLoadAsset()" style="font-size:16px;"><i class="icon icon-upload"></i> 导入</a> 
+        <a name="btnUpLoadAsset" authorize="yes" class="btn btn-primary dropdown-text" id="btnUpLoadAsset" onclick="btnUpLoadAsset()" style="font-size:16px;"><i class="icon icon-download"></i> 导出</a>
+        <a name="btnUpLoadAssetAll" authorize="yes" class="btn btn-primary dropdown-text" id="btnUpLoadAssetAll" onclick="btnUpLoadAssetAll()" style="font-size:16px;"><i class="icon icon-download"></i> 全部导出</a>
+        <a name="btnDelAsset" authorize="yes" class="btn btn-primary dropdown-text" id="btnDelAsset" style="font-size:16px;"><i class="icon icon-remove"></i> 删除</a>
+        <a name="btnToTempAsset" authorize="yes" class="btn btn-primary dropdown-text" id="btnToTempAsset" style="font-size:16px;"><i class="icon icon-camera"></i>发布至预选</a>
+        <a name="btnToTempAssetall" authorize="yes" class="btn btn-primary dropdown-text" id="btnToTempAssetall" style="font-size:16px;"><i class="icon icon-camera"></i>版权节目发布至预选</a>
+    </div>
+    <script>$('.toolbar').authorizeButton()</script>
+</div>
+```
+
+### 以上代码解释
+按照以上格式，注意
+> 1. 按钮写为<a></a>标签
+
+> 2. 添加属性 authorize="yes" 和类 class="btn btn-primary dropdown-text"，authorize="yes"表示按钮需要判断权限，class="btn btn-primary dropdown-text"控制按钮同意样式
+
+> 3. 按钮全部放在<div class="btn-group"></div>内，该div外写<script>$('.toolbar').authorizeButton()</script>，以此触发权限判断代码即可
+
+> 4. 按钮按照上述代码div嵌套格式
 
 
 
