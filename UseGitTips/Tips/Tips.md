@@ -293,7 +293,7 @@ $.fn.authorizeButton = function () {
 # 步骤三
 > 在界面设置操作：系统管理=》系统菜单=》选择已登记资源（具体以自己的模块为准）=》按钮管理=》选择按钮=》修改按钮；将所有按钮编号修改为按钮标签(<a></a>)的id；
 
-[奈文摩尔](https://github.com/qmtdlt/AllGit/blob/master/UseGitTips/Tips/NeverMore.gif)
+[奈文摩尔](https://github.com/qmtdlt/AllGit/blob/master/UseGitTips/Tips/Tulips.jpg)
 
 
 ### 权限测试用例编写

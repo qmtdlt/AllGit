@@ -5,7 +5,8 @@
 这是图片：
 ![][avatar]
 
-[avatar]: https://github.com/qmtdlt/AllGit/blob/master/UseGitTips/Tips/%E6%97%A0%E6%A0%87%E9%A2%98.jpg
+[avatar]: https://raw.githubusercontent.com/qmtdlt/AllGit/master/UseGitTips/Tips/Tulips.jpg
 
 
+![Aaron Swartz](https://raw.githubusercontent.com/qmtdlt/AllGit/master/UseGitTips/Tips/Tulips.jpg)
 
