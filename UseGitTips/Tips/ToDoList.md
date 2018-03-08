@@ -1,12 +1,5 @@
 - [ ] 测试角色，多角色
 - [ ] 媒资、版权、合同、往来款、摊销等整个系统按钮权限修改
 - [ ] 上一条完成测试
-
-这是图片（去掉https前的斜杠后食用）：
-![][avatar]
-
-[avatar]: /https://raw.githubusercontent.com/qmtdlt/AllGit/master/UseGitTips/Tips/Tulips.jpg
-
-这是图片：
-![Aaron Swartz](/https://raw.githubusercontent.com/qmtdlt/AllGit/master/UseGitTips/Tips/Tulips.jpg)
-
+- [ ] 在功能权限去勾选后，字段权限勾选未去掉，导致该角色仍然有该模块权限
+- [ ] 为了修改数据权限模块下拉信息精简，导致系统新增菜单是上级菜单无法选择系统管理
