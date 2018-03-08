@@ -296,5 +296,16 @@ $.fn.authorizeButton = function () {
 [奈文摩尔](https://github.com/qmtdlt/AllGit/blob/master/UseGitTips/Tips/NeverMore.gif)
 
 
+### 权限测试用例编写
+
+> 1. 测试是否影响到以前的单角色功能
+
+> 2. 测试新的多角色功能
+
+### 单角色功能测试
+- [ ] 1. 代码审查（位置：RoleController）
+- [ ] 2. 
+
+### 多角色功能测试
 
 
