@@ -5,7 +5,7 @@
 这是图片：
 ![][avatar]
 
-[avatar]: https://connorlin.github.io/images/avatar.jpg
+[avatar]: https://github.com/qmtdlt/AllGit/blob/master/UseGitTips/Tips/%E6%97%A0%E6%A0%87%E9%A2%98.jpg
 
 
 
