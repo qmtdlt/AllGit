@@ -1,45 +1,31 @@
 ﻿using System;
 namespace ConsoleTestApp
 {
+
     public enum Animal
     {
         Dog = 1,
         Cat,
         Bird,
     }
-    public enum myBulaWeek
-    {
-        Monday = 1,
-        Tuesday,
-        Wednesday,
-        Thursday,
-        Friday,
-        Saturday,
-        Sunday 
-    }
-    
     public class AnimalTypeAttribute : Attribute
     {
-        //构造函数，接受已给 Animal
         public AnimalTypeAttribute(Animal pet)
         {
             thePet = pet;
         }
-        //成员变量
-        protected Animal thePet;
-        //属性pet
-        public Animal Pet
+        protected Animal thePet
         {
-            get { return thePet;}
+            get { return thePet; }
             set { thePet = value; }
         }
     }
-    class AniMalTypeTestClass
+    class AnimalTypeTestClass
     {
         [AnimalType(Animal.Dog)]
         public void DogMethod() { }
         [AnimalType(Animal.Cat)]
-        public void CatMethod() { }
+        public void CagMethod() { }
         [AnimalType(Animal.Bird)]
         public void BirdMethod() { }
     }
@@ -47,20 +33,34 @@ namespace ConsoleTestApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine((int)myBulaWeek.Friday);
-            Console.WriteLine(myBulaWeek.Thursday);
-            AniMalTypeTestClass testClass = new AniMalTypeTestClass();
+            AnimalTypeTestClass testClass = new AnimalTypeTestClass();
             Type type = testClass.GetType();
-            foreach (var item in type.GetMethods())
+            foreach (Method mInfo in type.GetMethods())
             {
-                foreach (var attr in Attribute.GetCustomAttributes(item))
+                foreach (Attribute attr in Attribute.GetCustomAttributes(mInfo))
                 {
-                    if(attr.GetType() == typeof(AnimalTypeAttribute))
+                    if (attr.GetType() == typeof(AnimalTypeAttribute))
                     {
-                        Console.WriteLine("Method {0} has a pet {1} attribute.",item.Name,((AnimalTypeAttribute)attr).Pet);
+                        Console.WriteLine("Method {0} has a pet {1} attribute.",mInfo.name,((AnimalTypeAttribute)attr).Pet);
                     }
                 }
             }
+
+            foreach (MethodvInfo mInfo in type.GetMethods())
+            {
+                // Iterate through all the Attributes for each method. 
+                foreach (Attribute attr in
+                    Attribute.GetCustomAttributes(mInfo))
+                {
+                    // Check for the AnimalType attribute. 
+                    if (attr.GetType() == typeof(AnimalTypeAttribute))
+                        Console.WriteLine(
+                            "Method {0} has a pet {1} attribute.",
+                            mInfo.Name, ((AnimalTypeAttribute)attr).Pet);
+                }
+
+            }
+
         }
     }
 }
