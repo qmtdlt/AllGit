@@ -26,9 +26,10 @@
 
 > 2. 添加属性 authorize="yes" 和类 class="btn btn-primary dropdown-text"，authorize="yes"表示按钮需要判断权限，class="btn btn-primary dropdown-text"控制按钮同意样式
 
-> 3. 按钮全部放在<div class="btn-group"></div>内，该div外写<script>$('.toolbar').authorizeButton()</script>，以此触发权限判断代码即可
-# 步骤二
+> 3. 按钮全部放在```<div class="btn-group"></div>```内，该div外写```<script>$('.toolbar').authorizeButton()</script>```，以此触发权限判断代码即可
+
 > 4. 按钮按照上述代码div嵌套格式
+# 步骤二
 
 ```C#
     [HttpGet]
