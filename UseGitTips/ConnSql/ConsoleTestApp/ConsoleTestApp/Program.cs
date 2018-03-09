@@ -7,6 +7,17 @@ namespace ConsoleTestApp
         Cat,
         Bird,
     }
+    public enum myBulaWeek
+    {
+        Monday = 1,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday 
+    }
+    
     public class AnimalTypeAttribute : Attribute
     {
         //构造函数，接受已给 Animal
@@ -36,6 +47,8 @@ namespace ConsoleTestApp
     {
         static void Main(string[] args)
         {
+            Console.WriteLine((int)myBulaWeek.Friday);
+            Console.WriteLine(myBulaWeek.Thursday);
             AniMalTypeTestClass testClass = new AniMalTypeTestClass();
             Type type = testClass.GetType();
             foreach (var item in type.GetMethods())
