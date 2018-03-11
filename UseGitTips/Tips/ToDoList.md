@@ -2,20 +2,35 @@
 #### Timothy Videos C# finish every part in eveing
 - [x] 001
 >  lesson one
+
 >>  常识：0 1 代码 =》 汇编语言 =》 高级语言；
+
 >>>       高级语言=》低级语言  通过编译器；
+
 >  why C#？
+
 >>      通用：命令行程序；桌面程序；移动设备程序；web程序；游戏程序；
+
 >  编辑=》便宜=》调试=》发布
+
 >  学习路径：
+
 >>      语言=》类库=》框架
+
 >  visual（可视化） studio（工作室）
+
 >  wpf：try wpf 渐变色（try the full project)
+
 >  install visul studio
+
 >  recommend book name ： C# 5.0 in a NutShell
+
 >  download msdn : add C#
+
 >  download C# 6.0 draft Language Specification
+
 >  read english Documents
+
 - [ ] 002 
 - [ ] 003
 - [ ] 004
