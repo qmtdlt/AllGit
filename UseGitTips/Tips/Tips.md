@@ -313,10 +313,10 @@ $.fn.authorizeButton = function () {
 这是图片（去掉https前的斜杠后食用）：
 ![][avatar]
 
-[avatar]: /https://raw.githubusercontent.com/qmtdlt/AllGit/master/UseGitTips/Tips/Tulips.jpg
+[avatar]: https://raw.githubusercontent.com/qmtdlt/AllGit/master/UseGitTips/Tips/Tulips.jpg
 
 这是图片：
-![Aaron Swartz](/https://raw.githubusercontent.com/qmtdlt/AllGit/master/UseGitTips/Tips/Tulips.jpg)
+![Aaron Swartz](https://raw.githubusercontent.com/qmtdlt/AllGit/master/UseGitTips/Tips/Tulips.jpg)
 
 
 ### 使用Attribute
