@@ -34,7 +34,7 @@
 
 >  solution and project
 
-- [ ] finish the example
+- [x] finish the example
 
 
 - [ ] 003
