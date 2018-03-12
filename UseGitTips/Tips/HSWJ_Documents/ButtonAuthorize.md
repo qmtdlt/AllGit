@@ -43,4 +43,7 @@
 # 步骤三
 > 在界面设置操作：系统管理=》系统菜单=》选择已登记资源（具体以自己的模块为准）=》按钮管理=》选择按钮=》修改按钮；将所有按钮编号修改为按钮a标签的id；
 
+![Aaron Swartz](https://raw.githubusercontent.com/qmtdlt/AllGit/master/UseGitTips/Tips/Pics/%E6%8C%89%E9%92%AE%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.png)
+
+
 # 测试方法
