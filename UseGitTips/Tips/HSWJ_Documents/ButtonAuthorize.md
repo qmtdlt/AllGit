@@ -26,7 +26,7 @@
 
 > 2. 添加属性 authorize="yes" 和类 class="btn btn-primary dropdown-text"，authorize="yes"表示按钮需要判断权限，class="btn btn-primary dropdown-text"控制按钮同意样式
 
-> 3. 按钮全部放在```<div class="btn-group"></div>```内，该div外写```<script>$('.toolbar').authorizeButton()</script>```，以此触发权限判断代码即可
+> 3. 按钮全部放在```<div class="btn-group"></div>```内，该div外写```<script>$('.toolbar').authorizeButton()</script>```，以此触发权限判断代码
 
 > 4. 按钮按照上述代码div嵌套格式
 # 步骤二
@@ -42,3 +42,5 @@
 
 # 步骤三
 > 在界面设置操作：系统管理=》系统菜单=》选择已登记资源（具体以自己的模块为准）=》按钮管理=》选择按钮=》修改按钮；将所有按钮编号修改为按钮a标签的id；
+
+# 测试方法
