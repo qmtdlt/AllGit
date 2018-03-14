@@ -36,8 +36,23 @@
 
 - [x] finish the example
 
-
 - [ ] 003
+> 名称空间和类: ctrl + .
+
+> 类库引用:assembly;使用名称空间的物理基础
+
+> dll引用(黑盒引用,无源代码):将方法写成类库,使用时,右键=> add reference => browse =>选择该文件
+
+> 小心依赖关系
+
+> 是console 命令行程序显示窗口,通过引用;
+
+> 通过nuget引用类库,类库间有依赖关系是使用nuget. 例如EntityFramework
+
+> 有源码时引用,一个项目包含在不同solution
+
+> 高内聚,低耦合
+
 - [ ] 004
 - [ ] 005
 - [ ] 006
