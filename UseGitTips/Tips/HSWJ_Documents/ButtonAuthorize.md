@@ -46,5 +46,3 @@
 
 ![Aaron Swartz](https://raw.githubusercontent.com/qmtdlt/AllGit/master/UseGitTips/Tips/Pics/%E6%8C%89%E9%92%AE%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.png)
 
-
-# 测试方法
