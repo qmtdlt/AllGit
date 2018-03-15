@@ -389,3 +389,77 @@ class DemoClass {
 ```
 
 > 条款、合同金额
+
+# 主页修改为树形结构
+
+> 查询sys_config表，区分消息类型
+
+> 需求分析：
+
+根据以下sql查询结果，获得所有消息类型
+```sql
+select * from sys_config where ConfigGroup = 12
+```
+结论为必要节点如下：
+
+configName | configValue
+-|:-
+合同审核|1
+发行合同审核|2
+采购合同执行单审核|3
+发行合同执行单审核|4
+采购合同介质审核单审核|5
+付款申请单审核|6
+销售开票通知单审核|7
+合同归档审核|8
+合同变更单审核|9
+系统消息|10
+
+> 直接在界面修改代办显示方式，前提条件，实现一个展开收起的html动作
+
+> 使用layui，手风琴展开demo
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+	<script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+<body>
+
+    <div class="layui-collapse">
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">杜甫</h2>
+        <div class="layui-colla-content layui-show">内容区域</div>
+      </div>
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">李清照</h2>
+        <div class="layui-colla-content">内容区域</div>
+      </div>
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">鲁迅</h2>
+        <div class="layui-colla-content">内容区域</div>
+      </div>
+    </div>
+ 
+<script>
+//注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+</script>
+</body>
+</html>
+
+```
+
+> 写死根节点，节点内循环打印消息
+
+> 查询时，按照原结构显示查询结果。并显示结果数量
