@@ -32,5 +32,9 @@ namespace Delegata01
         {
             return x * x;
         }
+        static int plus(int x)
+        {
+            return x * x;
+        }
     }
 }
