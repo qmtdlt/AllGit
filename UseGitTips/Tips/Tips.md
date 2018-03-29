@@ -517,9 +517,26 @@ layui.use('element', function(){
 ```
 > 说明：删除第一个detail结束标签到第二个detail开始标签之间的内容,即可导入为一张凭证
 
+# **去掉返回按钮**
 
+> 参考发行合同变更单 链接标签
+```html
+<a  class='menuItem' href='/BusinessSaleManage/ContractManage/Details?id=90936' data-id='/BusinessSaleManage/ContractManage/Details?id=90936'><u style="font-size:14px;color:#ff0000">FX-SZDSYWB(CZTV201706210037)</u></a>
+```
 
+> 首页链接
+```html
+<a class="menuItem" data-id="87f2f557-c3fa-41ed-a36b-a498f299207e" data-index="91" href="/BusinessSaleManage/ContractManage/Details?id=90972&amp;audit=1"><u style="font-size:14px;color:#ff0000">审核</u></a>
+```
 
+### **1. 同样链接，主页链接到合同仍然在原页面**
+主页解决方案：
+
+```js
+$(function () {
+        $('.menuItem').on('click', top.$.nfinetab.addTab);
+    });
+```
 
 
 

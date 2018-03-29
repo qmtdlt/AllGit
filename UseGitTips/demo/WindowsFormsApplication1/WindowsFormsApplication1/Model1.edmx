@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NFineBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Asset_TempBaseInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Asset_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Asset_Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Asset_AliasName" Type="nvarchar" MaxLength="128" />
+          <Property Name="Asset_UpdateTime" Type="datetime" />
+          <Property Name="Asset_CreateTime" Type="datetime" />
+          <Property Name="Asset_Cost" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Asset_SumCost" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Asset_Genre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_GenreTwo" Type="varchar" MaxLength="50" />
+          <Property Name="Asset_Category" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_Chapter" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Asset_Director" Type="varchar" MaxLength="1024" />
+          <Property Name="Asset_Adaptor" Type="varchar" MaxLength="1024" />
+          <Property Name="Asset_Actors" Type="varchar" MaxLength="1024" />
+          <Property Name="Asset_Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_Year" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_MediaType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_resolution" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_PRunDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_RunDate" Type="date" />
+          <Property Name="Online_Pdate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Online_Date" Type="date" />
+          <Property Name="Broad_Date" Type="date" />
+          <Property Name="Asset_Platform" Type="nvarchar" MaxLength="256" />
+          <Property Name="Synchrono_Lever" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Asset_Subtitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_Language" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subtitle_Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_Manufaction" Type="nvarchar" MaxLength="128" />
+          <Property Name="Asset_TicketOffice" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TicketOffice_Lever" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_RunTime" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Asset_Payment" Type="nvarchar" MaxLength="256" />
+          <Property Name="Asset_CheckStatus" Type="int" />
+          <Property Name="CurContract_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Op_Person" Type="nvarchar" MaxLength="50" />
+          <Property Name="Op_Department" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_Memo" Type="nvarchar" MaxLength="256" />
+          <Property Name="RightInfo_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Buy_Type" Type="varchar" MaxLength="128" />
+          <Property Name="Name_EN" Type="varchar" MaxLength="128" />
+          <Property Name="Short_Description" Type="varchar" MaxLength="1024" />
+          <Property Name="Description" Type="varchar" MaxLength="8000" />
+          <Property Name="Producter_CH" Type="varchar" MaxLength="128" />
+          <Property Name="Producter_EN" Type="varchar" MaxLength="128" />
+          <Property Name="Provider_CH" Type="varchar" MaxLength="128" />
+          <Property Name="Provider_EH" Type="varchar" MaxLength="128" />
+          <Property Name="Provider" Type="varchar" MaxLength="128" />
+          <Property Name="License" Type="varchar" MaxLength="1024" />
+          <Property Name="Arv_File" Type="int" />
+          <Property Name="File_Date" Type="date" />
+          <Property Name="Sale_Range" Type="varchar" MaxLength="1024" />
+          <Property Name="Sale_Area" Type="varchar" MaxLength="1024" />
+          <Property Name="Check_endtime" Type="date" />
+          <Property Name="Contract_No" Type="varchar" MaxLength="50" />
+          <Property Name="Made_Area" Type="varchar" MaxLength="128" />
+          <Property Name="BuyAttributes" Type="varchar" MaxLength="128" />
+          <Property Name="Contentlevel" Type="varchar" MaxLength="128" />
+          <Property Name="PrizeInfo" Type="varchar" MaxLength="1024" />
+          <Property Name="ContentKeywords" Type="varchar" MaxLength="256" />
+          <Property Name="F1_Price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="F2_Price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="F3_Price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="F4_Price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="F5_Price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="F6_Price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="F7_Price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Is_PreSell" Type="varchar" MaxLength="50" />
+          <Property Name="Update_Person" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Contract_BaseInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContractSerial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentSerial" Type="varchar" MaxLength="4000" />
+          <Property Name="ContractNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContractName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PartyId" Type="varchar" MaxLength="4000" Nullable="false" />
+          <Property Name="PartyName" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ContractType" Type="int" Nullable="false" />
+          <Property Name="ContractNature" Type="int" Nullable="false" />
+          <Property Name="SecondaryContractNature" Type="varchar" MaxLength="50" />
+          <Property Name="ContractAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ContractAmountExch" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ContractAmountNoTax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PaymentAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PaymentAmountExch" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="AccountID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeptId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="SignDate" Type="datetime" />
+          <Property Name="InvoiceAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="EstimateAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="EstimateAmount_Exch" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SealTypeId" Type="varchar" MaxLength="50" />
+          <Property Name="InvoiceTypeId" Type="int" Nullable="false" />
+          <Property Name="CurrencyTypeId" Type="int" Nullable="false" />
+          <Property Name="CurrencyExchRate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TaxRate" Type="int" Nullable="false" />
+          <Property Name="PaymentTypeId" Type="int" Nullable="false" />
+          <Property Name="ExamineFlowId" Type="int" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="AuditingStatus" Type="int" Nullable="false" />
+          <Property Name="Creator" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Mender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+          <Property Name="AmortizeStat" Type="varchar" MaxLength="1" />
+          <Property Name="MyCompanyId" Type="varchar" MaxLength="50" />
+          <Property Name="MyCompany" Type="varchar" MaxLength="150" />
+          <Property Name="FileStatus" Type="int" Nullable="false" />
+          <Property Name="FileDate" Type="datetime" />
+          <Property Name="FileCount" Type="int" Nullable="false" />
+          <Property Name="FileRemark" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FileCreator" Type="varchar" MaxLength="50" />
+          <Property Name="RightListName" Type="nvarchar" MaxLength="1024" />
+          <Property Name="AuthorizeLifeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EstimatedFilingTime" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Contract_Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContractSerial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContractNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Asset_Id" Type="varchar" MaxLength="50" />
+          <Property Name="Asset_Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Asset_Director" Type="nvarchar" MaxLength="128" />
+          <Property Name="Asset_Year" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Asset_Genre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asset_Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Asset_Chapter" Type="int" Nullable="false" />
+          <Property Name="Asset_Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Asset_Amount_Exch" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Authorize_Life" Type="int" />
+          <Property Name="Authorize_StartDate" Type="datetime2" Precision="7" />
+          <Property Name="Authorize_EndDate" Type="datetime2" Precision="7" />
+          <Property Name="EstimateAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="EstimateAmount_Exch" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TaxRate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ExchangeRate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Asset_AmountNoTax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Asset_AmountTax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="IsReplacement" Type="int" Nullable="false" />
+          <Property Name="Creator" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Mender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+          <Property Name="assetAmortizeYYMM" Type="varchar" MaxLength="10" />
+          <Property Name="assetAmortizeStat" Type="varchar" MaxLength="1" />
+          <Property Name="FilmDate" Type="varchar" MaxLength="50" />
+          <Property Name="excutionStat" Type="varchar" MaxLength="1" />
+          <Property Name="excutionLastDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Contract_BaseInfo_Contract_BaseInfo">
+          <End Role="Contract_BaseInfo" Type="Self.Contract_BaseInfo" Multiplicity="1" />
+          <End Role="Contract_BaseInfo1" Type="Self.Contract_BaseInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Contract_BaseInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contract_BaseInfo1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NFineBaseModelStoreContainer">
+          <EntitySet Name="Asset_TempBaseInfo" EntityType="Self.Asset_TempBaseInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contract_BaseInfo" EntityType="Self.Contract_BaseInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contract_Detail" EntityType="Self.Contract_Detail" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Contract_BaseInfo_Contract_BaseInfo" Association="Self.FK_Contract_BaseInfo_Contract_BaseInfo">
+            <End Role="Contract_BaseInfo" EntitySet="Contract_BaseInfo" />
+            <End Role="Contract_BaseInfo1" EntitySet="Contract_BaseInfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NFineBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Asset_TempBaseInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Asset_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Asset_Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Asset_AliasName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="Asset_CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="Asset_Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Asset_SumCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Asset_Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_GenreTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Asset_Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_Chapter" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Asset_Director" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Asset_Adaptor" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Asset_Actors" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Asset_Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_Year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_MediaType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_resolution" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_PRunDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_RunDate" Type="DateTime" Precision="0" />
+          <Property Name="Online_Pdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Online_Date" Type="DateTime" Precision="0" />
+          <Property Name="Broad_Date" Type="DateTime" Precision="0" />
+          <Property Name="Asset_Platform" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Synchrono_Lever" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_Subtitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subtitle_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_Manufaction" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_TicketOffice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TicketOffice_Lever" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_RunTime" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Asset_Payment" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_CheckStatus" Type="Int32" />
+          <Property Name="CurContract_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Op_Person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Op_Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_Memo" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="RightInfo_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Buy_Type" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Name_EN" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Short_Description" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="Producter_CH" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Producter_EN" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Provider_CH" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Provider_EH" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Provider" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="License" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Arv_File" Type="Int32" />
+          <Property Name="File_Date" Type="DateTime" Precision="0" />
+          <Property Name="Sale_Range" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Sale_Area" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Check_endtime" Type="DateTime" Precision="0" />
+          <Property Name="Contract_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Made_Area" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="BuyAttributes" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Contentlevel" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="PrizeInfo" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="ContentKeywords" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="F1_Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="F2_Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="F3_Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="F4_Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="F5_Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="F6_Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="F7_Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Is_PreSell" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Update_Person" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Contract_BaseInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ParentSerial" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="ContractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContractName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PartyId" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PartyName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ContractType" Type="Int32" Nullable="false" />
+          <Property Name="ContractNature" Type="Int32" Nullable="false" />
+          <Property Name="SecondaryContractNature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContractAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ContractAmountExch" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ContractAmountNoTax" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PaymentAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PaymentAmountExch" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="AccountID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DeptId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="SignDate" Type="DateTime" Precision="3" />
+          <Property Name="InvoiceAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="EstimateAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="EstimateAmount_Exch" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SealTypeId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceTypeId" Type="Int32" Nullable="false" />
+          <Property Name="CurrencyTypeId" Type="Int32" Nullable="false" />
+          <Property Name="CurrencyExchRate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TaxRate" Type="Int32" Nullable="false" />
+          <Property Name="PaymentTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ExamineFlowId" Type="Int32" Nullable="false" />
+          <Property Name="Remark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="AuditingStatus" Type="Int32" Nullable="false" />
+          <Property Name="Creator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Mender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AmortizeStat" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="MyCompanyId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MyCompany" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FileStatus" Type="Int32" Nullable="false" />
+          <Property Name="FileDate" Type="DateTime" Precision="3" />
+          <Property Name="FileCount" Type="Int32" Nullable="false" />
+          <Property Name="FileRemark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FileCreator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RightListName" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorizeLifeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EstimatedFilingTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Contract_BaseInfo1" Relationship="Self.FK_Contract_BaseInfo_Contract_BaseInfo" FromRole="Contract_BaseInfo" ToRole="Contract_BaseInfo1" />
+          <NavigationProperty Name="Contract_BaseInfo2" Relationship="Self.FK_Contract_BaseInfo_Contract_BaseInfo" FromRole="Contract_BaseInfo1" ToRole="Contract_BaseInfo" />
+        </EntityType>
+        <EntityType Name="Contract_Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Asset_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Asset_Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Asset_Director" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_Year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Asset_Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asset_Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Asset_Chapter" Type="Int32" Nullable="false" />
+          <Property Name="Asset_Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Asset_Amount_Exch" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Authorize_Life" Type="Int32" />
+          <Property Name="Authorize_StartDate" Type="DateTime" Precision="7" />
+          <Property Name="Authorize_EndDate" Type="DateTime" Precision="7" />
+          <Property Name="EstimateAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="EstimateAmount_Exch" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TaxRate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ExchangeRate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Asset_AmountNoTax" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Asset_AmountTax" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="IsReplacement" Type="Int32" Nullable="false" />
+          <Property Name="Creator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Mender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="assetAmortizeYYMM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="assetAmortizeStat" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FilmDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="excutionStat" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="excutionLastDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Contract_BaseInfo_Contract_BaseInfo">
+          <End Role="Contract_BaseInfo" Type="Self.Contract_BaseInfo" Multiplicity="1" />
+          <End Role="Contract_BaseInfo1" Type="Self.Contract_BaseInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Contract_BaseInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contract_BaseInfo1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NFineBaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Asset_TempBaseInfo" EntityType="Self.Asset_TempBaseInfo" />
+          <EntitySet Name="Contract_BaseInfo" EntityType="Self.Contract_BaseInfo" />
+          <EntitySet Name="Contract_Detail" EntityType="Self.Contract_Detail" />
+          <AssociationSet Name="FK_Contract_BaseInfo_Contract_BaseInfo" Association="Self.FK_Contract_BaseInfo_Contract_BaseInfo">
+            <End Role="Contract_BaseInfo" EntitySet="Contract_BaseInfo" />
+            <End Role="Contract_BaseInfo1" EntitySet="Contract_BaseInfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NFineBaseModelStoreContainer" CdmEntityContainer="NFineBaseEntities">
+          <EntitySetMapping Name="Asset_TempBaseInfo">
+            <EntityTypeMapping TypeName="NFineBaseModel.Asset_TempBaseInfo">
+              <MappingFragment StoreEntitySet="Asset_TempBaseInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Asset_ID" ColumnName="Asset_ID" />
+                <ScalarProperty Name="Asset_Name" ColumnName="Asset_Name" />
+                <ScalarProperty Name="Asset_AliasName" ColumnName="Asset_AliasName" />
+                <ScalarProperty Name="Asset_UpdateTime" ColumnName="Asset_UpdateTime" />
+                <ScalarProperty Name="Asset_CreateTime" ColumnName="Asset_CreateTime" />
+                <ScalarProperty Name="Asset_Cost" ColumnName="Asset_Cost" />
+                <ScalarProperty Name="Asset_SumCost" ColumnName="Asset_SumCost" />
+                <ScalarProperty Name="Asset_Genre" ColumnName="Asset_Genre" />
+                <ScalarProperty Name="Asset_GenreTwo" ColumnName="Asset_GenreTwo" />
+                <ScalarProperty Name="Asset_Category" ColumnName="Asset_Category" />
+                <ScalarProperty Name="Asset_Chapter" ColumnName="Asset_Chapter" />
+                <ScalarProperty Name="Asset_Director" ColumnName="Asset_Director" />
+                <ScalarProperty Name="Asset_Adaptor" ColumnName="Asset_Adaptor" />
+                <ScalarProperty Name="Asset_Actors" ColumnName="Asset_Actors" />
+                <ScalarProperty Name="Asset_Country" ColumnName="Asset_Country" />
+                <ScalarProperty Name="Asset_Year" ColumnName="Asset_Year" />
+                <ScalarProperty Name="Asset_MediaType" ColumnName="Asset_MediaType" />
+                <ScalarProperty Name="Asset_resolution" ColumnName="Asset_resolution" />
+                <ScalarProperty Name="Asset_PRunDate" ColumnName="Asset_PRunDate" />
+                <ScalarProperty Name="Asset_RunDate" ColumnName="Asset_RunDate" />
+                <ScalarProperty Name="Online_Pdate" ColumnName="Online_Pdate" />
+                <ScalarProperty Name="Online_Date" ColumnName="Online_Date" />
+                <ScalarProperty Name="Broad_Date" ColumnName="Broad_Date" />
+                <ScalarProperty Name="Asset_Platform" ColumnName="Asset_Platform" />
+                <ScalarProperty Name="Synchrono_Lever" ColumnName="Synchrono_Lever" />
+                <ScalarProperty Name="Asset_Subtitle" ColumnName="Asset_Subtitle" />
+                <ScalarProperty Name="Asset_Language" ColumnName="Asset_Language" />
+                <ScalarProperty Name="Subtitle_Status" ColumnName="Subtitle_Status" />
+                <ScalarProperty Name="Asset_Manufaction" ColumnName="Asset_Manufaction" />
+                <ScalarProperty Name="Asset_TicketOffice" ColumnName="Asset_TicketOffice" />
+                <ScalarProperty Name="TicketOffice_Lever" ColumnName="TicketOffice_Lever" />
+                <ScalarProperty Name="Asset_RunTime" ColumnName="Asset_RunTime" />
+                <ScalarProperty Name="Asset_Payment" ColumnName="Asset_Payment" />
+                <ScalarProperty Name="Asset_CheckStatus" ColumnName="Asset_CheckStatus" />
+                <ScalarProperty Name="CurContract_ID" ColumnName="CurContract_ID" />
+                <ScalarProperty Name="Op_Person" ColumnName="Op_Person" />
+                <ScalarProperty Name="Op_Department" ColumnName="Op_Department" />
+                <ScalarProperty Name="Asset_Memo" ColumnName="Asset_Memo" />
+                <ScalarProperty Name="RightInfo_ID" ColumnName="RightInfo_ID" />
+                <ScalarProperty Name="Buy_Type" ColumnName="Buy_Type" />
+                <ScalarProperty Name="Name_EN" ColumnName="Name_EN" />
+                <ScalarProperty Name="Short_Description" ColumnName="Short_Description" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Producter_CH" ColumnName="Producter_CH" />
+                <ScalarProperty Name="Producter_EN" ColumnName="Producter_EN" />
+                <ScalarProperty Name="Provider_CH" ColumnName="Provider_CH" />
+                <ScalarProperty Name="Provider_EH" ColumnName="Provider_EH" />
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="License" ColumnName="License" />
+                <ScalarProperty Name="Arv_File" ColumnName="Arv_File" />
+                <ScalarProperty Name="File_Date" ColumnName="File_Date" />
+                <ScalarProperty Name="Sale_Range" ColumnName="Sale_Range" />
+                <ScalarProperty Name="Sale_Area" ColumnName="Sale_Area" />
+                <ScalarProperty Name="Check_endtime" ColumnName="Check_endtime" />
+                <ScalarProperty Name="Contract_No" ColumnName="Contract_No" />
+                <ScalarProperty Name="Made_Area" ColumnName="Made_Area" />
+                <ScalarProperty Name="BuyAttributes" ColumnName="BuyAttributes" />
+                <ScalarProperty Name="Contentlevel" ColumnName="Contentlevel" />
+                <ScalarProperty Name="PrizeInfo" ColumnName="PrizeInfo" />
+                <ScalarProperty Name="ContentKeywords" ColumnName="ContentKeywords" />
+                <ScalarProperty Name="F1_Price" ColumnName="F1_Price" />
+                <ScalarProperty Name="F2_Price" ColumnName="F2_Price" />
+                <ScalarProperty Name="F3_Price" ColumnName="F3_Price" />
+                <ScalarProperty Name="F4_Price" ColumnName="F4_Price" />
+                <ScalarProperty Name="F5_Price" ColumnName="F5_Price" />
+                <ScalarProperty Name="F6_Price" ColumnName="F6_Price" />
+                <ScalarProperty Name="F7_Price" ColumnName="F7_Price" />
+                <ScalarProperty Name="Is_PreSell" ColumnName="Is_PreSell" />
+                <ScalarProperty Name="Update_Person" ColumnName="Update_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contract_BaseInfo">
+            <EntityTypeMapping TypeName="NFineBaseModel.Contract_BaseInfo">
+              <MappingFragment StoreEntitySet="Contract_BaseInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ContractSerial" ColumnName="ContractSerial" />
+                <ScalarProperty Name="ParentSerial" ColumnName="ParentSerial" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="ContractName" ColumnName="ContractName" />
+                <ScalarProperty Name="PartyId" ColumnName="PartyId" />
+                <ScalarProperty Name="PartyName" ColumnName="PartyName" />
+                <ScalarProperty Name="ContractType" ColumnName="ContractType" />
+                <ScalarProperty Name="ContractNature" ColumnName="ContractNature" />
+                <ScalarProperty Name="SecondaryContractNature" ColumnName="SecondaryContractNature" />
+                <ScalarProperty Name="ContractAmount" ColumnName="ContractAmount" />
+                <ScalarProperty Name="ContractAmountExch" ColumnName="ContractAmountExch" />
+                <ScalarProperty Name="ContractAmountNoTax" ColumnName="ContractAmountNoTax" />
+                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+                <ScalarProperty Name="PaymentAmountExch" ColumnName="PaymentAmountExch" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="SignDate" ColumnName="SignDate" />
+                <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+                <ScalarProperty Name="EstimateAmount" ColumnName="EstimateAmount" />
+                <ScalarProperty Name="EstimateAmount_Exch" ColumnName="EstimateAmount_Exch" />
+                <ScalarProperty Name="SealTypeId" ColumnName="SealTypeId" />
+                <ScalarProperty Name="InvoiceTypeId" ColumnName="InvoiceTypeId" />
+                <ScalarProperty Name="CurrencyTypeId" ColumnName="CurrencyTypeId" />
+                <ScalarProperty Name="CurrencyExchRate" ColumnName="CurrencyExchRate" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+                <ScalarProperty Name="ExamineFlowId" ColumnName="ExamineFlowId" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AuditingStatus" ColumnName="AuditingStatus" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Mender" ColumnName="Mender" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="AmortizeStat" ColumnName="AmortizeStat" />
+                <ScalarProperty Name="MyCompanyId" ColumnName="MyCompanyId" />
+                <ScalarProperty Name="MyCompany" ColumnName="MyCompany" />
+                <ScalarProperty Name="FileStatus" ColumnName="FileStatus" />
+                <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+                <ScalarProperty Name="FileCount" ColumnName="FileCount" />
+                <ScalarProperty Name="FileRemark" ColumnName="FileRemark" />
+                <ScalarProperty Name="FileCreator" ColumnName="FileCreator" />
+                <ScalarProperty Name="RightListName" ColumnName="RightListName" />
+                <ScalarProperty Name="AuthorizeLifeName" ColumnName="AuthorizeLifeName" />
+                <ScalarProperty Name="EstimatedFilingTime" ColumnName="EstimatedFilingTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contract_Detail">
+            <EntityTypeMapping TypeName="NFineBaseModel.Contract_Detail">
+              <MappingFragment StoreEntitySet="Contract_Detail">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ContractSerial" ColumnName="ContractSerial" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="Asset_Id" ColumnName="Asset_Id" />
+                <ScalarProperty Name="Asset_Name" ColumnName="Asset_Name" />
+                <ScalarProperty Name="Asset_Director" ColumnName="Asset_Director" />
+                <ScalarProperty Name="Asset_Year" ColumnName="Asset_Year" />
+                <ScalarProperty Name="Asset_Genre" ColumnName="Asset_Genre" />
+                <ScalarProperty Name="Asset_Price" ColumnName="Asset_Price" />
+                <ScalarProperty Name="Asset_Chapter" ColumnName="Asset_Chapter" />
+                <ScalarProperty Name="Asset_Amount" ColumnName="Asset_Amount" />
+                <ScalarProperty Name="Asset_Amount_Exch" ColumnName="Asset_Amount_Exch" />
+                <ScalarProperty Name="Authorize_Life" ColumnName="Authorize_Life" />
+                <ScalarProperty Name="Authorize_StartDate" ColumnName="Authorize_StartDate" />
+                <ScalarProperty Name="Authorize_EndDate" ColumnName="Authorize_EndDate" />
+                <ScalarProperty Name="EstimateAmount" ColumnName="EstimateAmount" />
+                <ScalarProperty Name="EstimateAmount_Exch" ColumnName="EstimateAmount_Exch" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+                <ScalarProperty Name="Asset_AmountNoTax" ColumnName="Asset_AmountNoTax" />
+                <ScalarProperty Name="Asset_AmountTax" ColumnName="Asset_AmountTax" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsReplacement" ColumnName="IsReplacement" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Mender" ColumnName="Mender" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="assetAmortizeYYMM" ColumnName="assetAmortizeYYMM" />
+                <ScalarProperty Name="assetAmortizeStat" ColumnName="assetAmortizeStat" />
+                <ScalarProperty Name="FilmDate" ColumnName="FilmDate" />
+                <ScalarProperty Name="excutionStat" ColumnName="excutionStat" />
+                <ScalarProperty Name="excutionLastDate" ColumnName="excutionLastDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
