@@ -389,3 +389,161 @@ class DemoClass {
 ```
 
 > 条款、合同金额
+
+# 主页修改为树形结构
+
+> 查询sys_config表，区分消息类型
+
+> 需求分析：
+
+根据以下sql查询结果，获得所有消息类型
+```sql
+select * from sys_config where ConfigGroup = 12
+```
+结论为必要节点如下：
+
+configName | configValue
+-|:-
+合同审核|1
+发行合同审核|2
+采购合同执行单审核|3
+发行合同执行单审核|4
+采购合同介质审核单审核|5
+付款申请单审核|6
+销售开票通知单审核|7
+合同归档审核|8
+合同变更单审核|9
+系统消息|10
+
+> 直接在界面修改代办显示方式，前提条件，实现一个展开收起的html动作
+
+> 使用layui，手风琴展开demo
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+	<script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+<body>
+
+    <div class="layui-collapse">
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">杜甫</h2>
+        <div class="layui-colla-content layui-show">内容区域</div>
+      </div>
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">李清照</h2>
+        <div class="layui-colla-content">内容区域</div>
+      </div>
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">鲁迅</h2>
+        <div class="layui-colla-content">内容区域</div>
+      </div>
+    </div>
+ 
+<script>
+//注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+</script>
+</body>
+</html>
+
+```
+
+> 写死根节点，节点内循环打印消息
+
+> 查询时，按照原结构显示查询结果。并显示结果数量
+
+> 思路
+
+### 不通过消息推送至待办后产生的问题
+
+> 提审动作怎样知道关联的是哪个消息
+
+# **C# 中文转拼音**
+
+
+
+
+
+# **C# 问题**
+
+1. 一个xml只有一组ufinterface标签
+2. 一个凭证，凭证日期，制单人，帐薄，制单人等信息只能出现一次，即如下信息不能出现两组
+
+```xml
+<pk_vouchertype>01</pk_vouchertype>
+<year>2018</year>
+<period>03</period>
+<pk_system>GL</pk_system>
+<voucherkind>0</voucherkind>
+<pk_accountingbook>BJZG250101-0001</pk_accountingbook>
+<discardflag>N</discardflag>
+<prepareddate>2018-03-23 15:55:36</prepareddate>
+<pk_prepared>yonyou1</pk_prepared>
+<signflag>N</signflag>
+<pk_org>BJZG250101</pk_org>
+<pk_group>01</pk_group>
+``` 
+3. 连个凭证合成一个，所有的分录需要写在details标签内，一个xml只有一组detail标签
+4. merge.xml修改方法：删除如下内容：
+```xml
+</details> </voucher_head> </voucher> </ufinterface><ufinterface account="0001" billtype="vouchergl" businessunitcode="develop" filename="" groupcode="01" isexchange="" orgcode="BJZG0101" receiver="0001A1100000000006EN" replace="" roottag="" sender="default">
+<voucher>
+<voucher_head>
+    <pk_vouchertype>01</pk_vouchertype>
+    <year>2018</year>
+    <period>03</period>
+    <pk_system>GL</pk_system>
+    <voucherkind>0</voucherkind>
+    <pk_accountingbook>BJZG250101-0001</pk_accountingbook>
+    <discardflag>N</discardflag>
+    <prepareddate>2018-03-23 15:55:37</prepareddate>
+    <pk_prepared>yonyou1</pk_prepared>
+    <signflag>N</signflag>
+    <pk_org>BJZG250101</pk_org>
+    <pk_group>01</pk_group>
+    <details>
+```
+> 说明：删除第一个detail结束标签到第二个detail开始标签之间的内容,即可导入为一张凭证
+
+# **去掉返回按钮**
+
+> 参考发行合同变更单 链接标签
+```html
+<a  class='menuItem' href='/BusinessSaleManage/ContractManage/Details?id=90936' data-id='/BusinessSaleManage/ContractManage/Details?id=90936'><u style="font-size:14px;color:#ff0000">FX-SZDSYWB(CZTV201706210037)</u></a>
+```
+
+> 首页链接
+```html
+<a class="menuItem" data-id="87f2f557-c3fa-41ed-a36b-a498f299207e" data-index="91" href="/BusinessSaleManage/ContractManage/Details?id=90972&amp;audit=1"><u style="font-size:14px;color:#ff0000">审核</u></a>
+```
+
+### **1. 同样链接，主页链接到合同仍然在原页面**
+主页解决方案：
+
+```js
+$(function () {
+        $('.menuItem').on('click', top.$.nfinetab.addTab);
+    });
+```
+
+
+
+
+
+
+
+
+
+
